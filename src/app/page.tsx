@@ -5,6 +5,7 @@ import Link from "next/link";
 import logo from "../../public/images/milagra.png";
 import { MdEmail } from "react-icons/md";
 import { FiPhoneCall, FiPhone } from "react-icons/fi";
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import Navbar from "../components/Navbar/page";
 import Footer from "../components/Footer/page"
 import aboutone from "../../public/images/aboutone.png";
@@ -26,7 +27,7 @@ import gallerythree from "../../public/images/milagraimg7.jpg";
 import galleryfour from "../../public/images/milagraimg3.jpg";
 import { FaPlus } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
-import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import testimonialone from "../../public/images/testimonialone.png"
 import { MdArrowOutward } from "react-icons/md";
 import { useRouter, usePathname } from "next/navigation";
@@ -86,7 +87,12 @@ const faqData = [
   }
 ];
 
+const heroImages = [
+  "/images/milagraimg1.jpg",
+  "/images/milagraimg2.jpg",
+  "/images/milagraimg3.jpg",
 
+];
 
 const galleryImages = [
   galleryone,
@@ -99,6 +105,7 @@ const galleryImages = [
 
 const repeatedImages = [...galleryImages, ...galleryImages, ...galleryImages];
 export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [initialLoading, setInitialLoading] = useState(true);
   const [startIndex, setStartIndex] = useState(0);
   const [visibleCards, setVisibleCards] = useState(3);
@@ -111,6 +118,25 @@ export default function Home() {
       router.push(path);
     }
   };
+  // for hero sliding
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+    }, 4000); // 4 sec
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) =>
+      prev === 0 ? heroImages.length - 1 : prev - 1
+    );
+  };
+
   // Dynamically adjust visibleCards based on screen width
   useEffect(() => {
     const handleResize = () => {
@@ -236,17 +262,70 @@ export default function Home() {
         </div>
       </section>
       <Navbar />
-      <section>
-        <div
-          className="w-full lg:h-screen  bg-cover bg-center flex items-center justify-start text-white"
-          style={{ backgroundImage: `url('/images/milagraimg2.jpg')` }}
-        >
-          <div className="text-start  p-8 rounded-lg">
-            <h1 className="text-4xl lg:text-7xl   font-medium mb-4 lg:ml-20 mt-20">We Build Your <br />OWn Dream</h1>
+    <section className="relative w-full bg-cover bg-center h-[40vh] sm:h-[80vh] lg:h-screen overflow-hidden">
 
-          </div>
-        </div>
-      </section>
+  {/* Slides */}
+{heroImages.map((img, index) => (
+  <div
+    key={index}
+    className={`absolute w-full h-full transition-opacity duration-1000 ${
+      index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
+    }`}
+  >
+    {/* IMAGE */}
+    <Image
+      src={img}
+      alt="hero"
+      fill
+      className="object-cover"
+      priority
+    />
+
+    {/* CONTENT */}
+   <div className="relative flex items-center h-full">
+  <div className="text-white px-4 sm:px-6 lg:ml-36 ml-14 lg:mt-20 mt-10 
+                  bg-black/30
+                  lg:py-12 py-4 rounded-lg w-fit">
+    <h1 className="text-2xl sm:text-4xl lg:text-7xl font-medium">
+      We Build Your <br /> Own Dream
+    </h1>
+  </div>
+</div>
+  </div>
+))}
+
+  {/* LEFT ARROW */}
+  <button
+    onClick={prevSlide}
+    className="absolute left-4 sm:left-6 lg:left-16 top-1/2 -translate-y-1/2 z-20 bg-black/40 text-white p-2 sm:p-3 rounded-full hover:bg-black transition"
+  >
+    <FaChevronLeft className="text-lg sm:text-xl lg:text-2xl" />
+  </button>
+
+  {/* RIGHT ARROW */}
+  <button
+    onClick={nextSlide}
+    className="absolute right-4 sm:right-6 lg:right-20 top-1/2 -translate-y-1/2 z-20 bg-black/40 text-white p-2 sm:p-3 rounded-full hover:bg-black transition"
+  >
+    <FaChevronRight className="text-lg sm:text-xl lg:text-2xl" />
+  </button>
+
+  {/* DOTS */}
+  <div className="absolute bottom-4 sm:bottom-6 w-full flex justify-center gap-2 sm:gap-3 z-20">
+    {heroImages.map((_, index) => (
+      <button
+        key={index}
+        onClick={() => setCurrentSlide(index)}
+        className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all ${
+          currentSlide === index
+            ? "bg-white scale-125"
+            : "bg-gray-400"
+        }`}
+      ></button>
+    ))}
+  </div>
+
+</section>
       <section className="lg:py-16 py-8 " id="about">
         <div className="container">
           <div>
