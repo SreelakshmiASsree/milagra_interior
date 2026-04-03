@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+.container{
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0px 20px;
+
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:#EEEBE4;
+  color: var(--foreground);
+  font-family: "Poppins", sans-serif;
+}
+
+/* styles.css */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+.marquee {
+  animation: marquee 40s linear infinite;
+  animation-play-state: running;
+}
+
+.group:hover .marquee {
+  animation-play-state: paused;
+}
+
+@media (max-width: 400px) {
+  .marquee {
+  animation: marquee 10s linear infinite; /* Slower content needs more time for smoother experience */
+  }
+}
+
+
+@keyframes bounceMove {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-bounce1 {
+  animation: bounceMove 0.8s ease-in-out infinite;
+  animation-fill-mode: both;
+}
+
+.animate-bounce2 {
+  animation: bounceMove 0.8s ease-in-out infinite;
+  animation-delay: 0.2s;
+  animation-fill-mode: both;
+}
+
+.animate-bounce3 {
+  animation: bounceMove 0.8s ease-in-out infinite;
+  animation-delay: 0.4s;
+  animation-fill-mode: both;
+}
