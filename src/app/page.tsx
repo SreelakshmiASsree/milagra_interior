@@ -359,12 +359,12 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <div className="lg:mt-12 h-[600px] w-full" data-aos="fade-up">
+            <div className="lg:mt-12 lg:h-[600px] w-full" data-aos="fade-up">
               <Image src={projectone} alt="projectone" width={600} height={50} className="w-full h-full  rounded-xl object-cover" />
             </div>
             <div className="flex lg:flex-row flex-col justify-between lg:gap-10  gap-5 lg:mt-10 mt-5">
               <div className="">
-                <div className="h-[470px] w-full">
+                <div className="lg:h-[470px] w-full">
                   <Image src={projecttwo} alt="projecttwo" width={700} height={50} className="rounded-xl h-full  object-cover" />
                 </div>
                 <p data-aos="fade-up" data-aos-duration="2000" className="mt-10 max-w-[600px] lg:leading-10 text-sm lg:text-lg" >Milagra Designs creates spaces that tell your story with timeless aesthetics and personalized touches.
