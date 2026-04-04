@@ -73,24 +73,24 @@ export default function Footer() {
                     alt="Logo"
                     width={200}
                     height={50}
-                    className="transform transition-transform duration-300 hover:scale-105 lg:w-[200px] w-[150px]"
+                    className="transform transition-transform duration-300 hover:scale-105 lg:w-52 w-40"
                   />
-                  <p className="text-[#fff] md:text-[15px] text-sm font-normal">
+                  <p className="text-[#ffffff] md:text-[15px] text-sm font-normal">
                     Experience Bespoke Architectural Design Crafted to Reflect Your Vision And Lifestyle
                   </p>
                 </div>
 
                 {/* Column 2 */}
                 <div className="flex flex-col md:gap-4 gap-3 cursor-pointer">
-                  <p onClick={() => handleNavigation("/")} className="font-medium text-[14px] md:text-[15px] text-[#fff] hover:text-[#C4910D]">Home</p>
-                  <p onClick={handleNavigationToAbout} className="font-medium text-[14px] md:text-[15px] text-[#fff] hover:text-[#C4910D]">About Us</p>
-                  <p onClick={handleNavigationToPackage} className="font-medium text-[14px] md:text-[15px] text-[#fff] hover:text-[#C4910D]">Packages</p>
-                  <p onClick={() => handleNavigation("/gallery")} className="font-medium text-[14px] md:text-[15px] text-[#fff] hover:text-[#C4910D]">Gallery</p>
-                  <p onClick={() => handleNavigation("/portfolio")} className="font-medium text-[14px] md:text-[15px] text-[#fff] hover:text-[#C4910D]">Portfolio</p>
+                  <p onClick={() => handleNavigation("/")} className="font-medium text-[14px] md:text-[15px] text-[#ffffff] hover:text-[#C4910D]">Home</p>
+                  <p onClick={handleNavigationToAbout} className="font-medium text-[14px] md:text-[15px] text-[#ffffff] hover:text-[#C4910D]">About Us</p>
+                  <p onClick={handleNavigationToPackage} className="font-medium text-[14px] md:text-[15px] text-[#ffffff] hover:text-[#C4910D]">Packages</p>
+                  <p onClick={() => handleNavigation("/gallery")} className="font-medium text-[14px] md:text-[15px] text-[#ffffff] hover:text-[#C4910D]">Gallery</p>
+                  <p onClick={() => handleNavigation("/portfolio")} className="font-medium text-[14px] md:text-[15px] text-[#ffffff] hover:text-[#C4910D]">Portfolio</p>
                 </div>
 
                 {/* Column 3 */}
-                <div className="flex flex-col md:gap-5 gap-3 text-[#fff]">
+                <div className="flex flex-col md:gap-5 gap-3 text-[#ffffff]">
                   <div>
                     <p className="flex items-center gap-4 md:text-[15px] text-[12px] font-medium">
                       <span className="md:text-2xl text-lg"><IoCallOutline /></span>
@@ -102,7 +102,7 @@ export default function Footer() {
                       <span className="md:text-2xl text-lg"><IoLocationOutline /></span>
                       Milagra Designs | Interior Designers in
                     </p>
-                    <p className="max-w-[280px] ml-8 md:text-[15px] text-[12px] font-medium">
+                    <p className="max-w-72 ml-8 md:text-[15px] text-[12px] font-medium">
                       Trivandrum and Kollam
                     </p>
                   </div>
@@ -117,8 +117,8 @@ export default function Footer() {
             </div>
           </div>
           <div className="md:mt-15 mt-10 flex justify-center items-center bg-[#C4910D80] py-3">
-            <p className="md:text-[15px] text-[12px] font-normal text-[#fff]">
-              &copy; 2025 Door of Dream Architects. All rights reserved.
+            <p className="md:text-[15px] text-[12px] font-normal text-[#ffffff]">
+              &copy; {new Date().getFullYear()}  Milagra Design Architects. All rights reserved.
             </p>
           </div>
         </div>

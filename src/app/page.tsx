@@ -262,70 +262,68 @@ export default function Home() {
         </div>
       </section>
       <Navbar />
-    <section className="relative w-full bg-cover bg-center h-[40vh] sm:h-[80vh] lg:h-screen overflow-hidden">
+      <section className="relative w-full bg-cover bg-center h-[40vh] sm:h-[80vh] lg:h-screen overflow-hidden">
 
-  {/* Slides */}
-{heroImages.map((img, index) => (
-  <div
-    key={index}
-    className={`absolute w-full h-full transition-opacity duration-1000 ${
-      index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
-    }`}
-  >
-    {/* IMAGE */}
-    <Image
-      src={img}
-      alt="hero"
-      fill
-      className="object-cover"
-      priority
-    />
+        {/* Slides */}
+        {heroImages.map((img, index) => (
+          <div
+            key={index}
+            className={`absolute w-full h-full transition-opacity duration-1000 ${index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
+              }`}
+          >
+            {/* IMAGE */}
+            <Image
+              src={img}
+              alt="hero"
+              fill
+              className="object-cover"
+              priority
+            />
 
-    {/* CONTENT */}
-   <div className="relative flex items-center h-full">
-  <div className="text-white px-4 sm:px-6 lg:ml-36 ml-14 lg:mt-20 mt-10 
+            {/* CONTENT */}
+            <div className="relative flex items-center h-full">
+              <div className="text-white px-4 sm:px-6 lg:ml-36 ml-14 lg:mt-20 mt-10 
                   bg-black/30
                   lg:py-12 py-4 rounded-lg w-fit">
-    <h1 className="text-2xl sm:text-4xl lg:text-7xl font-medium">
-      We Build Your <br /> Own Dream
-    </h1>
-  </div>
-</div>
-  </div>
-))}
+                <h1 className="text-2xl sm:text-4xl lg:text-7xl font-medium">
+                  We Build Your <br /> Own Dream
+                </h1>
+              </div>
+            </div>
+          </div>
+        ))}
 
-  {/* LEFT ARROW */}
-  <button
-    onClick={prevSlide}
-    className="absolute left-4 sm:left-6 lg:left-16 top-1/2 -translate-y-1/2 z-20 bg-black/40 text-white p-2 sm:p-3 rounded-full hover:bg-black transition"
-  >
-    <FaChevronLeft className="text-lg sm:text-xl lg:text-2xl" />
-  </button>
+        {/* LEFT ARROW */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-4 sm:left-6 lg:left-16 top-1/2 -translate-y-1/2 z-20 bg-black/40 text-white p-2 sm:p-3 rounded-full hover:bg-black transition"
+        >
+          <FaChevronLeft className="text-lg sm:text-xl lg:text-2xl" />
+        </button>
 
-  {/* RIGHT ARROW */}
-  <button
-    onClick={nextSlide}
-    className="absolute right-4 sm:right-6 lg:right-20 top-1/2 -translate-y-1/2 z-20 bg-black/40 text-white p-2 sm:p-3 rounded-full hover:bg-black transition"
-  >
-    <FaChevronRight className="text-lg sm:text-xl lg:text-2xl" />
-  </button>
+        {/* RIGHT ARROW */}
+        <button
+          onClick={nextSlide}
+          className="absolute right-4 sm:right-6 lg:right-20 top-1/2 -translate-y-1/2 z-20 bg-black/40 text-white p-2 sm:p-3 rounded-full hover:bg-black transition"
+        >
+          <FaChevronRight className="text-lg sm:text-xl lg:text-2xl" />
+        </button>
 
-  {/* DOTS */}
-  <div className="absolute bottom-4 sm:bottom-6 w-full flex justify-center gap-2 sm:gap-3 z-20">
-    {heroImages.map((_, index) => (
-      <button
-        key={index}
-        onClick={() => setCurrentSlide(index)}
-        className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all ${
-          currentSlide === index
-            ? "bg-white scale-125"
-            : "bg-gray-400"
-        }`}
-      ></button>
-    ))}
-  </div>
+        {/* DOTS */}
+        <div className="absolute bottom-4 sm:bottom-6 w-full flex justify-center gap-2 sm:gap-3 z-20">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all ${currentSlide === index
+                  ? "bg-white scale-125"
+                  : "bg-gray-400"
+                }`}
+            ></button>
+          ))}
+        </div>
 
-</section>
+      </section>
       <section className="lg:py-16 py-8 " id="about">
         <div className="container">
           <div>
@@ -403,9 +401,11 @@ export default function Home() {
                 <h1 className="lg:text-2xl text-xl  font-medium">Office and commersial Design</h1>
                 <p className="lg:text-sm text-xs font-normal max-w-[550px]"> our team ensures exceptional quality and detail, transforming homes and commercial spaces into inspiring environments filled with style and purpose.</p>
                 <div className="flex lg:justify-end lg:mt-32 justify-center ">
-                  <button className="flex items-center font-normal gap-1 border bg-[#845607]  text-[#fff] border-[#C4910D] px-4 py-2 rounded-xl hover:bg-[#fff] hover:text-[#C4910D] mt-4">
-                    Contact Us <MdOutlineArrowForward />
-                  </button>
+                  <Link href="#Consultation">
+                    <button className="flex items-center font-normal gap-1 border bg-[#845607] text-white border-[#C4910D] px-4 py-2 rounded-xl hover:bg-[#fff] hover:text-[#C4910D] mt-4">
+                      Contact Us <MdOutlineArrowForward />
+                    </button>
+                  </Link>
                 </div>
               </div>
 

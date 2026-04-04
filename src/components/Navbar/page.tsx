@@ -85,16 +85,16 @@ export default function Navbar() {
                     <div className="flex justify-between items-center h-14 ">
                         {/* Logo */}
                         <Link href="/">
-                            <Image src={logo} alt="Logo" width={180} height={50} className="w-[120px] lg:w-[200px]" />
+                            <Image src={logo} alt="Logo" width={180} height={50} className="w-32 lg:w-52" />
                         </Link>
 
                         {/* Desktop Links */}
-                        <div className="hidden lg:flex space-x-12 font-[500] text-md">
-                            <button onClick={() => handleNavigation("/")} className="text-[#fff] font-normal text-lg hover:text-[#C4910D]">Home</button>
-                            <button onClick={handleNavigationToAbout} className="text-[#fff] font-normal text-lg hover:text-[#C4910D]">About us</button>
-                            <button onClick={handleNavigationToPackage} className="text-[#fff] font-normal text-lg hover:text-[#C4910D]">Packages</button>
-                            <button onClick={() => handleNavigation("/portfolio")} className="text-[#fff] font-normal text-lg hover:text-[#C4910D]">Portfolio</button>
-                            <button onClick={() => handleNavigation("/gallery")} className="text-[#fff] font-normal text-lg hover:text-[#C4910D]">Gallery</button>
+                        <div className="hidden lg:flex space-x-12 font-medium text-md">
+                            <button onClick={() => handleNavigation("/")} className="text-[#ffffff] font-normal text-lg hover:text-[#C4910D]">Home</button>
+                            <button onClick={handleNavigationToAbout} className="text-[#ffffff] font-normal text-lg hover:text-[#C4910D]">About us</button>
+                            <button onClick={handleNavigationToPackage} className="text-[#ffffff] font-normal text-lg hover:text-[#C4910D]">Packages</button>
+                            <button onClick={() => handleNavigation("/projects")} className="text-[#ffffff] font-normal text-lg hover:text-[#C4910D]">Projects</button>
+                            <button onClick={() => handleNavigation("/gallery")} className="text-[#ffffff] font-normal text-lg hover:text-[#C4910D]">Gallery</button>
                         </div>
 
                         {/* Contact Button */}
@@ -119,7 +119,7 @@ export default function Navbar() {
 
                 {/* Mobile Menu Overlay */}
                 {isOpen && (
-                    <div className="fixed inset-y-0 right-20 w-2/3 bg-[#3F3E41] z-50 flex flex-col items-center space-y-6 text-white text-lg font-medium">
+                    <div className="fixed inset-y-0 right-20 w-3/4 bg-[#3F3E41] z-50 flex flex-col items-center space-y-6 text-white text-lg font-medium">
                         <div className="flex flex-col gap-4 mt-20">
                             <button
                                 className="absolute top-5 right-5 text-3xl text-white"
@@ -130,7 +130,7 @@ export default function Navbar() {
                             <button onClick={() => handleNavigation("/")} className="hover:text-[#C4910D]">Home</button>
                             <button onClick={handleNavigationToAbout} className="hover:text-[#C4910D]">About us</button>
                             <button onClick={handleNavigationToPackage} className="hover:text-[#C4910D]">Packages</button>
-                            <button onClick={() => handleNavigation("/portfolio")} className="hover:text-[#C4910D]">Portfolio</button>
+                            <button onClick={() => handleNavigation("/projects")} className="hover:text-[#C4910D]">Projects</button>
                             <button onClick={() => handleNavigation("/gallery")} className="hover:text-[#C4910D]">Gallery</button>
                             <button
                                 onClick={handleNavigationToContact}
